@@ -45,18 +45,82 @@ NVIDIA TAO Toolkit은 사전 학습된 모델을 기반으로 전이 학습을 �
 ## Tao LaneNet 예시 코드 구조 
 
 ### 1. Spec 파일 예시 (train_spec.txt)
-<img width="865" height="622" alt="24" src="https://github.com/user-attachments/assets/72e490e8-6689-4325-a35e-c3df9bc29f7d" />
-<img width="695" height="690" alt="34" src="https://github.com/user-attachments/assets/8671edfc-9673-4d79-a0f7-8c1aba73af56" />
+```
+dataset_config {
+  data_sources: {
+    label_directory_path: "/workspace/tao-experiments/lanenet/train/labels"
+    image_directory_path: "/workspace/tao-experiments/lanenet/train/images"
+  }
+  image_extension: "jpg"
+  target_class_mapping {
+    key: "lane"
+    value: "lane"
+  }
+  validation_data_sources: {
+    label_directory_path: "/workspace/tao-experiments/lanenet/val/labels"
+    image_directory_path: "/workspace/tao-experiments/lanenet/val/images"
+  }
+}
 
+model_config {
+  input_image_width: 1280
+  input_image_height: 720
+  input_image_channels: 3
+  anchor_stride: 16
+}
+
+train_config {
+  batch_size: 4
+  epochs: 80
+  learning_rate {
+    soft_start_annealing_schedule {
+      min_learning_rate: 1e-5
+      max_learning_rate: 1e-3
+      soft_start: 0.1
+      annealing: 0.7
+    }
+  }
+  regularizer {
+    type: L1
+    weight: 5e-4
+  }
+}
+
+augmentation_config {
+  output_width: 1280
+  output_height: 720
+  horizontal_flip: 0.5
+  crop_and_resize_prob: 0.5
+  zoom_min: 1.0
+  zoom_max: 2.0
+}
+```
 
 ### 1. 학습 명령어 예시 
-<img width="1016" height="288" alt="2" src="https://github.com/user-attachments/assets/bf2f4da3-cb9b-4df2-93a5-1f508c594c7e" />
+```
+tao lanenet train \
+  -e /path/to/train_spec.txt \
+  -r /results/lanenet/ \
+  -k <encryption_key>
+```
 
 ### 2. 추론 명령어 예시
-<img width="802" height="322" alt="3" src="https://github.com/user-attachments/assets/b835c2a7-4ce2-40a1-8d66-78cefb2e4f8d" />
+```
+tao lanenet inference \
+  -e /path/to/infer_spec.txt \
+  -i /path/to/test/images \
+  -o /path/to/output \
+  -m /path/to/trained_model.tlt \
+  -k <encryption_key>
+```
 
 ### 3. 모델 export 예시
-<img width="822" height="283" alt="4" src="https://github.com/user-attachments/assets/0efd9c11-7043-4e6c-911b-b22fa5294d28" />
+```
+tao lanenet export \
+  -m /path/to/trained_model.tlt \
+  -o /path/to/model.onnx \
+  -k <encryption_key>
+```
 
 
 
