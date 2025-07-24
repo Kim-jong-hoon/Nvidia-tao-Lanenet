@@ -96,7 +96,7 @@ augmentation_config {
 }
 ```
 
-### 1. 학습 명령어 예시 
+### 2. 학습 명령어 예시 
 ```
 tao lanenet train \
   -e /path/to/train_spec.txt \
@@ -104,7 +104,7 @@ tao lanenet train \
   -k <encryption_key>
 ```
 
-### 2. 추론 명령어 예시
+### 3. 추론 명령어 예시
 ```
 tao lanenet inference \
   -e /path/to/infer_spec.txt \
@@ -114,7 +114,7 @@ tao lanenet inference \
   -k <encryption_key>
 ```
 
-### 3. 모델 export 예시
+### 4. 모델 export 예시
 ```
 tao lanenet export \
   -m /path/to/trained_model.tlt \
