@@ -12,11 +12,6 @@ LaneNet은 NVIDIA TAO Toolkit 기반의 **차선 검출 모델(Lane Detection)**
 - [특징](#%ED%8A%B9%EC%A7%95)
 - [개요](#%EA%B0%9C%EC%9A%94)
 - [TAO Toolkit과의 통합](#tao-toolkit%EC%99%80%EC%9D%98-%ED%86%B5%ED%95%A9)
-- [설치 및 준비사항](#%EC%84%A4%EC%B9%98-%EB%B0%8F-%EC%A4%80%EB%B9%84%EC%82%AC%ED%95%AD)
-- [훈련 및 전이 학습](#%ED%9B%88%EB%A0%A8-%EB%B0%8F-%EC%A0%84%EC%9D%B4-%ED%95%99%EC%8A%B5)
-- [추론 및 배포](#%EC%B6%94%EB%A1%A0-%EB%B0%8F-%EB%B0%B0%ED%8F%AC)
-- [사용 예시](#%EC%82%AC%EC%9A%A9-%EC%98%88%EC%8B%9C)
-- [참고 링크](#%EC%B0%B8%EA%B3%A0-%EB%A7%81%ED%81%AC)
 
 ---
 
@@ -47,15 +42,16 @@ NVIDIA TAO Toolkit은 사전 학습된 모델을 기반으로 전이 학습을 �
 5. **최적화 및 배포**: TensorRT 등을 사용하여 모델을 최적화하고, Jetson과 같은 엣지 디바이스에 배포합니다.
 
 ---
+## Tao LaneNet 예시 코드 구조 
 
-## 설치 및 준비사항
+### 1. 학습 명령어 예시 
+<img width="1016" height="288" alt="2" src="https://github.com/user-attachments/assets/bf2f4da3-cb9b-4df2-93a5-1f508c594c7e" />
 
-- **필수 조건**
-  - NVIDIA GPU 및 CUDA 지원 드라이버
-  - Docker (또는 로컬 Python 환경)
-  - NVIDIA TAO Toolkit 설치 ([공식 문서](https://developer.nvidia.com/tao-toolkit) 참고)
-  
-- **데이터셋 준비**
-  - 도로 이미지와 어노테이션 파일 (예: KITTI 형식)
-  
----
+### 2. 추론 명령어 예시
+<img width="802" height="322" alt="3" src="https://github.com/user-attachments/assets/b835c2a7-4ce2-40a1-8d66-78cefb2e4f8d" />
+
+### 3. 모델 export 예시
+<img width="822" height="283" alt="4" src="https://github.com/user-attachments/assets/0efd9c11-7043-4e6c-911b-b22fa5294d28" />
+
+
+
