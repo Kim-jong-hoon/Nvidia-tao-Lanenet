@@ -3,7 +3,7 @@
 --> Nvidia TAO Toolkit에서 제공하는 차선 인식 모델, 자율주행 차량 등에 매우 유용하다.
 # LaneNet: NVIDIA TAO Lane Detection Model
 
-LaneNet은 NVIDIA TAO Toolkit 기반의 **차선 검출 모델(Lane Detection)** 입니다. 이 모델은 도로 이미지에서 차선을 픽셀 단위로 분리하여, 자율주행, ADAS 등 다양한 운전자 지원 시스템에서 활용할 수 있도록 설계되었습니다.
+LaneNet은 NVIDIA TAO Toolkit 기반의 **차선 검출 모델(Lane Detection)** 이다. 이 모델은 도로 이미지에서 차선을 픽셀 단위로 분리하여, 자율주행, ADAS 등 다양한 운전자 지원 시스템에서 활용할 수 있도록 설계되었다.
 
 ---
 
