@@ -44,6 +44,11 @@ NVIDIA TAO Toolkit은 사전 학습된 모델을 기반으로 전이 학습을 �
 ---
 ## Tao LaneNet 예시 코드 구조 
 
+### 1. Spec 파일 예시 (train_spec.txt)
+<img width="865" height="622" alt="24" src="https://github.com/user-attachments/assets/72e490e8-6689-4325-a35e-c3df9bc29f7d" />
+<img width="695" height="690" alt="34" src="https://github.com/user-attachments/assets/8671edfc-9673-4d79-a0f7-8c1aba73af56" />
+
+
 ### 1. 학습 명령어 예시 
 <img width="1016" height="288" alt="2" src="https://github.com/user-attachments/assets/bf2f4da3-cb9b-4df2-93a5-1f508c594c7e" />
 
